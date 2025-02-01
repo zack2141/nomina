@@ -1,0 +1,85 @@
+
+
+<div id="cont-empleados">
+    
+    <!--  -->
+
+    <div *ngFor="let item of Empleado">
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellidos}}</td>
+                    <td>{{item.email}}</td>
+                    <td> <button data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                                 (click)="ver_empleado(item.id)"> ver empleado
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="vaciar_inputs()">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <div class="input-group mb-3">
+                <span class="input-group-text">Id</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control"  [(ngModel)]="Identi" [(ngModel)]="emple.id" id="identificacion" >
+                  <label for="floatingInputGroup1"></label>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">Nombre</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" [(ngModel)]="nombres_emple" id="nombres" [(ngModel)]="emple.nombre">
+                  <label for="floatingInputGroup1"></label>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">apellidos</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGroup1" placeholder="" [(ngModel)]="apellidos_emple" [(ngModel)]="emple.apellidos" id="apellidos">
+                  <label for="floatingInputGroup1"></label>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">Correo</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGroup1" placeholder="" [(ngModel)]="correo_emple" [(ngModel)]="emple.email" id="correo">
+                  <label for="floatingInputGroup1"></label>
+                </div>
+              </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  (click)="vaciar_inputs()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="guardar()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
