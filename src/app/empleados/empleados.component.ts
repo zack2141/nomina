@@ -19,7 +19,7 @@ export class EmpleadosComponent {
   apellidos_emple!: string;
   correo_emple!: string;
 
-  emple : Empleados = new Empleados;
+   emple: Empleados = new Empleados;
 
   constructor(private servicio:ServicioEmpleadoService){}
 
